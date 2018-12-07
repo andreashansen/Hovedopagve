@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+<!-- Base application theme. -->
+    <style name="Theme.Community" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorControlActivated</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+
+    <style name="Widget.Community.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">?attr/colorAccent</item>
+        <item name="android:theme">@style/Theme.Community</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Community.Toolbar</item>
+    </style>
+
+    <style parent="TextAppearance.MaterialComponents.Button" name="TextAppearance.Community.Toolbar">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style parent="" name="Widget.Shrine.Backdrop">
+        <item name="android:background">?android:attr/colorAccent</item>
+    </style>
+
+    <style name="TextAppearance.Community.Title" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style  name="Widget.Community.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextAppearance">@style/TextAppearance.Community.TextInputLayout.HintText</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textColorHint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Community.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="Widget.Community.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">?android:attr/colorPrimaryDark</item>
+        <item name="backgroundTint">?attr/colorControlActivated</item>
+        <item name="android:stateListAnimator" tools:ignore="NewApi">@animator/anim_next_button_state_list_anim </item>
+    </style>
+
+    <style name="Widget.Community.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+</resources>

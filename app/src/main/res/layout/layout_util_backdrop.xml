@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <merge xmlns:android="http://schemas.android.com/apk/res/android"    >
+    <android.support.design.button.MaterialButton
+        android:id="@+id/button_news"
+        android:text="@string/backdrop_home"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        style="@style/Widget.Community.Button.TextButton"
+        />
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/button_polls"
+        android:text="@string/backdrop_poll"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        style="@style/Widget.Community.Button.TextButton"
+        />
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/button_campaigns"
+        android:text="@string/backdrop_offer"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        style="@style/Widget.Community.Button.TextButton"
+        />
+
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="56dp"
+        android:background="?android:attr/textColorPrimary"
+        android:layout_margin="16dp"        />
+
+    <android.support.design.button.MaterialButton
+        android:id="@+id/button_my_account"
+        android:text="@string/backdrop_my_account"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        style="@style/Widget.Community.Button.TextButton"
+        />
+
+</merge>
