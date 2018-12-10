@@ -1,20 +1,32 @@
 <resources>
     <string name="app_name">DampBiksen.dk</string>
     <string name="app_name_end">Community</string>
-    <string name="hint_username">Username</string>
-    <string name="hint_password">Password</string>
-    <string name="button_next">Next</string>
-    <string name="button_cancel">Cancel</string>
-    <string name="error_password">Password must contain at least 8 characters.</string>
+
+    <!--UI- Title Items -->
     <string name="filter_title">Filter</string>
     <string name="search_title">Search</string>
-    <string name="product_title">Title</string>
-    <string name="product_description">Secondary text</string>
-    <string name="signed_out">Signed Out</string>
-    <string name="sign_out">Sign Out</string>
+
     <string name="title_app_bar_news">Dampbiksen.dk  Nyheder</string>
     <string name="title_app_bar_polls">Dampbiksen.dk  Afstemning</string>
     <string name="title_app_bar_products">Dampbiksen.dk  Aktuelle Kampagner</string>
+
+    <!--UI- Alert Items -->
+    <string name="error_password">Password must contain at least 8 characters.</string>
+
+    <!--UI- Descriptions Items -->
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="signed_out">Signed Out</string>
+
+    <!--UI- Button Items -->
+    <string name="sign_out">Sign Out</string>
+    <string name="button_vote">Stem</string>
+    <string name="button_next">Next</string>
+    <string name="button_cancel">Cancel</string>
+
+    <!--Card Items -->
+    <string name="product_title">Title</string>
+    <string name="product_description">Secondary text</string>
 
     <!--Menu Items -->
     <string name="backdrop_home">Nyheder</string>
@@ -23,12 +35,7 @@
     <string name="backdrop_my_account">Min Konto</string>
     <string name="scroll_title">Deals</string>
 
-    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
-    <string name="facebook_application_id" translatable="false">1148480265315707</string>
-    <string name="facebook_login_protocol_scheme" translatable="false">fb1148480265315707</string>
-    <string name="facebook_status_fmt">Facebook User: %s</string>
-    <string name="facebook_title_text">Facebook Login</string>
-
+    <!--Firebase Items -->
     <string name="firebase_web_host" translatable="false">dampbiksen.firebaseapp.com</string>
     <string name="firebase_status_fmt">Firebase User: %s</string>
     <string name="firebase_user_management">Firebase User Management</string>
@@ -36,6 +43,11 @@
     <string name="no_internet_connection">No Internet connection</string>
     <string name="unknown_error">Unknown Error</string>
 
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">1148480265315707</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb1148480265315707</string>
+    <string name="facebook_status_fmt">Facebook User: %s</string>
+    <string name="facebook_title_text">Facebook Login</string>
     <string name="cancelled">Cancelled</string>
     <string name="permission_not_granted">Unable to perform selected action because permissions were not granted.</string>
     <string name="ok">OK</string>
@@ -49,7 +61,6 @@
     <string name="no_friends_selected">&lt;No friends selected&gt;</string>
     <string name="no_place_selected">&lt;No place selected&gt;</string>
     <string name="pick_seattle_place">Pick a Seattle Place</string>
-
     <string name="exception">Exception: %1$s</string>
 
 </resources>
