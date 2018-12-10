@@ -5,11 +5,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.transition.Fade;
-import android.transition.TransitionInflater;
-import android.transition.TransitionSet;
+import android.transition.Slide;
 import android.transition.Visibility;
-import android.view.View;
-import android.widget.TextView;
+import android.view.Gravity;
+
 
 public class ActivityMain extends AppCompatActivity implements NavigationHost {
 
@@ -17,7 +16,6 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
     public Fragment fragmentPoll;
     public Fragment fragmentCampaigns;
 
-    private static final long MOVE_DEFAULT_TIME = 1000;
     private static final long FADE_DEFAULT_TIME = 500;
 
     @Override
@@ -74,22 +72,18 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
         Fade exitFade = new Fade();
         exitFade.setDuration(FADE_DEFAULT_TIME);
         exitFade.setMode(Visibility.MODE_OUT);
+
         previousFragment.setExitTransition(exitFade);
 
 
-        // 2. Shared Elements Transition
-        //TransitionSet enterTransitionSet = new TransitionSet();
-        //enterTransitionSet.addTransition(TransitionInflater.from(this).inflateTransition(android.R.transition.move));
-        //enterTransitionSet.setDuration(MOVE_DEFAULT_TIME);
-        //enterTransitionSet.setStartDelay(FADE_DEFAULT_TIME);
-        //nextFragment.setSharedElementEnterTransition(enterTransitionSet);
+        // 2. Enter Transition for New Fragment
+        Slide enterSlide = new Slide(Gravity.RIGHT);
+        enterSlide.setStartDelay(FADE_DEFAULT_TIME );
+        enterSlide.setDuration(FADE_DEFAULT_TIME);
+        enterSlide.setMode(Visibility.MODE_IN);
 
-        // 3. Enter Transition for New Fragment
-        Fade enterFade = new Fade();
-        enterFade.setStartDelay(FADE_DEFAULT_TIME );
-        enterFade.setDuration(FADE_DEFAULT_TIME);
-        enterFade.setMode(Visibility.MODE_OUT);
-        nextFragment.setEnterTransition(enterFade);
+
+        nextFragment.setEnterTransition(enterSlide);
 
 
         fragmentTransaction.replace(R.id.container, nextFragment);

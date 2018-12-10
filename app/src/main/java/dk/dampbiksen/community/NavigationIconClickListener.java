@@ -72,11 +72,6 @@ public class NavigationIconClickListener implements View.OnClickListener {
         animatorSet.play(animator);
         animator.start();
 
-        if (view.getId() == R.id.button_news)
-        {
-            ((ActivityMain)context.getApplicationContext()).navigateTo(new FragmentNews(), false);
-        }
-
     }
 
     private void updateIcon(View view) {
