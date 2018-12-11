@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import dk.dampbiksen.community.network.ImageRequester;
+import dk.dampbiksen.community.network.PollEntry;
 import dk.dampbiksen.community.network.ProductEntry;
 
 /**
@@ -16,10 +17,10 @@ import dk.dampbiksen.community.network.ProductEntry;
  */
 public class PollCardRecyclerViewAdapter extends RecyclerView.Adapter<PollCardViewHolder> {
 
-    private List<ProductEntry> productList;
+    private List<PollEntry> productList;
     private ImageRequester imageRequester;
 
-    PollCardRecyclerViewAdapter(List<ProductEntry> productList) {
+    PollCardRecyclerViewAdapter(List<PollEntry> productList) {
         this.productList = productList;
         imageRequester = ImageRequester.getInstance();
     }
@@ -34,10 +35,10 @@ public class PollCardRecyclerViewAdapter extends RecyclerView.Adapter<PollCardVi
     @Override
     public void onBindViewHolder(@NonNull PollCardViewHolder holder, int position) {
         if (productList != null && position < productList.size()) {
-            ProductEntry product = productList.get(position);
-            holder.productTitle.setText(product.title);
-            holder.productDesc.setText(product.description);
-            imageRequester.setImageFromUrl(holder.productImage, product.url);
+            PollEntry pollContender = productList.get(position);
+            holder.productTitle.setText(pollContender.title);
+            holder.productDesc.setText(pollContender.description);
+            imageRequester.setImageFromUrl(holder.productImage, pollContender.url);
         }
     }
 

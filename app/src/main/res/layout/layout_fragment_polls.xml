@@ -37,18 +37,24 @@
             app:title="@string/title_app_bar_polls" />
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/presenter"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="12345648798424867654658 - 12345648798424867654658 - 12345648798424867654658 - 12345648798424867654658"
         android:layout_marginTop="50dp"
         android:paddingTop="5dp"
-        android:paddingStart="35dp"
-        android:paddingEnd="5dp"
+        android:paddingStart="5dp"
         android:background="@color/productGridBackgroundColor"
         android:elevation="8dp"
-        android:transitionName="trans"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v4.widget.NestedScrollView>
 
 
 </FrameLayout>

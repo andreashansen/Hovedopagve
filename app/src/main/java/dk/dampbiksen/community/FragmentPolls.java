@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,6 +13,9 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+
+import dk.dampbiksen.community.network.PollEntry;
+import dk.dampbiksen.community.network.ProductEntry;
 
 
 public class FragmentPolls extends Fragment {
@@ -30,6 +35,17 @@ public class FragmentPolls extends Fragment {
         // Set up the toolbar + menu navigation
         setUpToolbar(view);
         setUpMenuNavigation(view);
+
+        // Set up the RecyclerView
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false));
+        PollCardRecyclerViewAdapter adapter = new PollCardRecyclerViewAdapter(
+                PollEntry.initPollEntryList(getResources()));
+        recyclerView.setAdapter(adapter);
+        int largePadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing);
+        int smallPadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small);
+        recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
 
         view.findViewById(R.id.presenter).setBackground(getContext().getDrawable(R.drawable.fragments_background_shape));
 
