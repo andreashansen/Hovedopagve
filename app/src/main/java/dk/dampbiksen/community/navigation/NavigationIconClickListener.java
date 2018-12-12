@@ -1,4 +1,4 @@
-package dk.dampbiksen.community;
+package dk.dampbiksen.community.navigation;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 
+import dk.dampbiksen.community.R;
 
 
 /**
@@ -36,7 +37,7 @@ public class NavigationIconClickListener implements View.OnClickListener {
         this(context, sheet, interpolator, null, null);
     }
 
-    NavigationIconClickListener(
+    public NavigationIconClickListener(
             Context context, View sheet, @Nullable Interpolator interpolator,
             @Nullable Drawable openIcon, @Nullable Drawable closeIcon) {
         this.context = context;

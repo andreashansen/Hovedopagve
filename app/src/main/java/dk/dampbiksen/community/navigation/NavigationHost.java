@@ -1,4 +1,4 @@
-package dk.dampbiksen.community;
+package dk.dampbiksen.community.navigation;
 
 import android.support.v4.app.Fragment;
 

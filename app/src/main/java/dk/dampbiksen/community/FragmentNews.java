@@ -13,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import dk.dampbiksen.community.navigation.NavigationIconClickListener;
+import dk.dampbiksen.community.navigation.NavigationMenuClickListener;
+
 
 public class FragmentNews extends Fragment {
 

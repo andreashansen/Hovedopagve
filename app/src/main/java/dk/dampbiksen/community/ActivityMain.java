@@ -9,6 +9,8 @@ import android.transition.Slide;
 import android.transition.Visibility;
 import android.view.Gravity;
 
+import dk.dampbiksen.community.navigation.NavigationHost;
+
 
 public class ActivityMain extends AppCompatActivity implements NavigationHost {
 

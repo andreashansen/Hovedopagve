@@ -1,12 +1,15 @@
-package dk.dampbiksen.community;
+package dk.dampbiksen.community.navigation;
 
 import android.view.View;
 import android.widget.Toast;
 
+import dk.dampbiksen.community.ActivityMain;
+import dk.dampbiksen.community.R;
+
 public class NavigationMenuClickListener implements View.OnClickListener {
 
 
-    NavigationMenuClickListener(View sheet)
+    public NavigationMenuClickListener(View sheet)
     {
 
     }

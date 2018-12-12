@@ -14,7 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import dk.dampbiksen.community.navigation.NavigationIconClickListener;
+import dk.dampbiksen.community.navigation.NavigationMenuClickListener;
 import dk.dampbiksen.community.network.ProductEntry;
+import dk.dampbiksen.community.util.DefaultItemDecoration;
+import dk.dampbiksen.community.util.ProductCardRVAdapter;
 
 
 public class FragmentCampaigns extends Fragment {
@@ -39,12 +43,12 @@ public class FragmentCampaigns extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
-        ProductCardRecyclerViewAdapter adapter = new ProductCardRecyclerViewAdapter(
+        ProductCardRVAdapter adapter = new ProductCardRVAdapter(
                 ProductEntry.initProductEntryList(getResources()));
         recyclerView.setAdapter(adapter);
         int largePadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small);
-        recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
+        recyclerView.addItemDecoration(new DefaultItemDecoration(largePadding, smallPadding));
 
         view.findViewById(R.id.presenter).setBackground(getContext().getDrawable(R.drawable.fragments_background_shape));
 

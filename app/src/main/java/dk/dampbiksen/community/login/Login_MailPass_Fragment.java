@@ -15,7 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import dk.dampbiksen.community.NavigationHost;
+import dk.dampbiksen.community.navigation.NavigationHost;
 import dk.dampbiksen.community.FragmentCampaigns;
 import dk.dampbiksen.community.R;
 

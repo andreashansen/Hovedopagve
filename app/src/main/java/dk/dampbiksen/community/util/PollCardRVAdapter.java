@@ -1,4 +1,4 @@
-package dk.dampbiksen.community;
+package dk.dampbiksen.community.util;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,19 +8,19 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import dk.dampbiksen.community.R;
 import dk.dampbiksen.community.network.ImageRequester;
 import dk.dampbiksen.community.network.PollEntry;
-import dk.dampbiksen.community.network.ProductEntry;
 
 /**
  * Adapter used to show a simple grid of products.
  */
-public class PollCardRecyclerViewAdapter extends RecyclerView.Adapter<PollCardViewHolder> {
+public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> {
 
     private List<PollEntry> productList;
     private ImageRequester imageRequester;
 
-    PollCardRecyclerViewAdapter(List<PollEntry> productList) {
+    public PollCardRVAdapter(List<PollEntry> productList) {
         this.productList = productList;
         imageRequester = ImageRequester.getInstance();
     }
