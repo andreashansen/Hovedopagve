@@ -34,6 +34,12 @@
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
+    <style name="TextAppearance.Community.PollId" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
     <style  name="Widget.Community.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.Community.TextInputLayout.HintText</item>
         <item name="android:paddingBottom">8dp</item>

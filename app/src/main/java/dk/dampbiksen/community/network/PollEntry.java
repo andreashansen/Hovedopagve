@@ -42,7 +42,7 @@ public class PollEntry {
     }
 
     /**
-     * Loads a raw JSON at R.raw.products and converts it into a list of ProductEntry objects
+     * Loads a raw JSON at R.raw.pollcontender and converts it into a list of PollEntry objects
      */
     public static List<PollEntry> initPollEntryList(Resources resources) {
         InputStream inputStream = resources.openRawResource(R.raw.pollcontender);

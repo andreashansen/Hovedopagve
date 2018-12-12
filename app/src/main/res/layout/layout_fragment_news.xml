@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="abcdefghijklmnopqrstuvwxyzæøå - abcdefghijklmnopqrstuvwxyzæøå - abcdefghijklmnopqrstuvwxyzæøå - abcdefghijklmnopqrstuvwxyzæøå"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="45dp"
         android:paddingTop="5dp"
         android:paddingStart="35dp"
         android:paddingEnd="5dp"

@@ -35,26 +35,54 @@
             android:paddingRight="12dp"
             app:contentInsetStart="0dp"
             app:title="@string/title_app_bar_polls" />
+
     </android.support.design.widget.AppBarLayout>
 
+<LinearLayout
+    android:id="@+id/presenter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="45dp"
+    android:orientation="vertical"
+    android:background="@color/productGridBackgroundColor"
+    android:elevation="8dp">
+
+
+    <TextView
+        android:id="@+id/poll_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/poll_description"
+        android:textAlignment="center"
+        android:layout_margin="15dp"
+        android:textAppearance="?attr/textAppearanceBody2" />
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="?android:attr/colorPrimaryDark"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
     <android.support.v4.widget.NestedScrollView
-        android:id="@+id/presenter"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:paddingTop="5dp"
+
         android:paddingStart="5dp"
-        android:background="@color/productGridBackgroundColor"
-        android:elevation="8dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+        </android.support.v7.widget.RecyclerView>
 
     </android.support.v4.widget.NestedScrollView>
-
+</LinearLayout>
 
 </FrameLayout>
