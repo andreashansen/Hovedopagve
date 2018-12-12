@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import dk.dampbiksen.community.navigation.NavigationHost;
-import dk.dampbiksen.community.FragmentCampaigns;
+import dk.dampbiksen.community.FragmentDiscounts;
 import dk.dampbiksen.community.R;
 
 
@@ -42,7 +42,7 @@ public class Login_MailPass_Fragment extends Fragment {
                     passwordTextInput.setError(getString(R.string.error_password));
                 } else {
                     passwordTextInput.setError(null); // Clear the error
-                    ((NavigationHost) getActivity()).navigateTo(new FragmentCampaigns(), false); // Navigate to the next Fragment
+                    ((NavigationHost) getActivity()).navigateTo(new FragmentDiscounts(), false); // Navigate to the next Fragment
                 }
             }
         });

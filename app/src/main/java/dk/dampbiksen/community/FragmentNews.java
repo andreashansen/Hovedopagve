@@ -44,7 +44,7 @@ public class FragmentNews extends Fragment {
     private void setUpMenuNavigation(View view) {
         view.findViewById(R.id.button_news).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_news)));
         view.findViewById(R.id.button_polls).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_polls)));
-        view.findViewById(R.id.button_campaigns).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_campaigns)));
+        view.findViewById(R.id.button_discounts).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_discounts)));
         view.findViewById(R.id.button_my_account).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_my_account)));
     }
 

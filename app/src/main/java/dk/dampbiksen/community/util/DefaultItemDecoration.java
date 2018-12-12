@@ -4,10 +4,10 @@ import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import dk.dampbiksen.community.FragmentCampaigns;
+import dk.dampbiksen.community.FragmentDiscounts;
 
 /**
- * Custom item decoration for a vertical {@link FragmentCampaigns} {@link RecyclerView}. Adds a
+ * Custom item decoration for a vertical {@link FragmentDiscounts} {@link RecyclerView}. Adds a
  * small amount of padding to the left of grid items, and a large amount of padding to the right.
  */
 public class DefaultItemDecoration extends RecyclerView.ItemDecoration {

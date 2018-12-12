@@ -21,7 +21,7 @@ import dk.dampbiksen.community.util.DefaultItemDecoration;
 import dk.dampbiksen.community.util.ProductCardRVAdapter;
 
 
-public class FragmentCampaigns extends Fragment {
+public class FragmentDiscounts extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class FragmentCampaigns extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.layout_fragment_product_grid, container, false);
+        View view = inflater.inflate(R.layout.layout_fragment_discounts, container, false);
 
         // Set up the toolbar + menu navigation
         setUpToolbar(view);
@@ -58,12 +58,12 @@ public class FragmentCampaigns extends Fragment {
     private void setUpMenuNavigation(View view) {
         view.findViewById(R.id.button_news).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_news)));
         view.findViewById(R.id.button_polls).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_polls)));
-        view.findViewById(R.id.button_campaigns).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_campaigns)));
+        view.findViewById(R.id.button_discounts).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_discounts)));
         view.findViewById(R.id.button_my_account).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_my_account)));
     }
 
     private void setUpToolbar(View view) {
-        Toolbar toolbar = view.findViewById(R.id.app_bar_offers);
+        Toolbar toolbar = view.findViewById(R.id.app_bar_discounts);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         if (activity != null) {
             activity.setSupportActionBar(toolbar);

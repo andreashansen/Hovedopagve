@@ -16,7 +16,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
 
     public Fragment fragmentNews;
     public Fragment fragmentPoll;
-    public Fragment fragmentCampaigns;
+    public Fragment fragmentDiscount;
 
     private static final long FADE_DEFAULT_TIME = 500;
 
@@ -27,12 +27,12 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
 
         fragmentNews = new FragmentNews();
         fragmentPoll = new FragmentPolls();
-        fragmentCampaigns = new FragmentCampaigns();
+        fragmentDiscount = new FragmentDiscounts();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, fragmentCampaigns)
+                    .add(R.id.container, fragmentDiscount)
                     .commit();
         }
     }
