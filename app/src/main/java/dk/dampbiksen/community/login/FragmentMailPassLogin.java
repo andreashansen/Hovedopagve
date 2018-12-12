@@ -20,7 +20,7 @@ import dk.dampbiksen.community.FragmentDiscounts;
 import dk.dampbiksen.community.R;
 
 
-public class Login_MailPass_Fragment extends Fragment {
+public class FragmentMailPassLogin extends Fragment {
 
 
 

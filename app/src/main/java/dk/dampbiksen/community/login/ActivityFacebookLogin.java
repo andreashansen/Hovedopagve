@@ -47,7 +47,7 @@ import java.util.Arrays;
 import dk.dampbiksen.community.ActivityMain;
 import dk.dampbiksen.community.R;
 
-public class Login_Facebook_Activity extends AppCompatActivity {
+public class ActivityFacebookLogin extends AppCompatActivity {
 
     private enum PendingAction {
         NONE,
@@ -101,7 +101,7 @@ public class Login_Facebook_Activity extends AppCompatActivity {
         }
 
         private void showResult(String title, String alertMessage) {
-            new AlertDialog.Builder(Login_Facebook_Activity.this)
+            new AlertDialog.Builder(ActivityFacebookLogin.this)
                     .setTitle(title)
                     .setMessage(alertMessage)
                     .setPositiveButton(R.string.ok, null)
@@ -147,7 +147,7 @@ public class Login_Facebook_Activity extends AppCompatActivity {
                     }
 
                     private void showAlert() {
-                        new AlertDialog.Builder(Login_Facebook_Activity.this)
+                        new AlertDialog.Builder(ActivityFacebookLogin.this)
                                 .setTitle(R.string.cancelled)
                                 .setMessage(R.string.permission_not_granted)
                                 .setPositiveButton(R.string.ok, null)
@@ -242,7 +242,7 @@ public class Login_Facebook_Activity extends AppCompatActivity {
 
         if (enableButtons && profile != null) {
             profilePictureView.setProfileId(profile.getId());
-            greeting.setText(getString(R.string.hello_user, profile.getFirstName()));
+            greeting.setText(getString(R.string.hello_user, profile.getFirstName() + profile.getLastName()));
             login_next.setVisibility(View.VISIBLE);
         } else {
             login_next.setVisibility(View.INVISIBLE);
@@ -289,19 +289,19 @@ public class Login_Facebook_Activity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             if (user != null)
                             {
-                                Toast.makeText(Login_Facebook_Activity.this, "Authentication Succeded.",
+                                Toast.makeText(ActivityFacebookLogin.this, "Authentication Succeded.",
                                         Toast.LENGTH_LONG).show();
                             }
                             else
                             {
-                                Toast.makeText(Login_Facebook_Activity.this, "Authentication halfpassed - User = Null.",
+                                Toast.makeText(ActivityFacebookLogin.this, "Authentication halfpassed - User = Null.",
                                         Toast.LENGTH_LONG).show();
                             }
 
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(Login_Facebook_Activity.this, "Authentication Failed.",
+                            Toast.makeText(ActivityFacebookLogin.this, "Authentication Failed.",
                                     Toast.LENGTH_LONG).show();
                         }
                     }

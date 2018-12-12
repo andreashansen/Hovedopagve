@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Community">
 
         <activity
-            android:name=".login.Login_Facebook_Activity"
+            android:name=".login.ActivityFacebookLogin"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
