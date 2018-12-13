@@ -36,7 +36,7 @@
     <string name="backdrop_poll">Ugens Afstemning</string>
     <string name="backdrop_offer">Loyalitetsfordele</string>
     <string name="backdrop_my_account">Min Konto</string>
-    <string name="scroll_title">Deals</string>
+    
 
     <!--Firebase Items -->
     <string name="firebase_web_host" translatable="false">dampbiksen.firebaseapp.com</string>

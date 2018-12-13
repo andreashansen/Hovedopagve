@@ -2,17 +2,24 @@ package dk.dampbiksen.community.util;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import java.util.List;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import dk.dampbiksen.community.ActivityMain;
-import dk.dampbiksen.community.FragmentPolls;
+import java.util.List;
+import java.util.Calendar;
+
 import dk.dampbiksen.community.R;
-import dk.dampbiksen.community.login.ActivityFacebookLogin;
 import dk.dampbiksen.community.network.ImageRequester;
 import dk.dampbiksen.community.network.PollEntry;
 
@@ -23,10 +30,14 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
 
     private List<PollEntry> productList;
     private ImageRequester imageRequester;
+    private DatabaseReference myRef;
+    private FirebaseDatabase database;
 
     public PollCardRVAdapter(List<PollEntry> productList) {
         this.productList = productList;
-        imageRequester = ImageRequester.getInstance();
+        this.imageRequester = ImageRequester.getInstance();
+        database = FirebaseDatabase.getInstance();
+
     }
 
     @NonNull
@@ -48,8 +59,14 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(), "Tak fordi du stemte på " + pollContender.id,
                             Toast.LENGTH_SHORT).show();
+
+                    // Write a message to the database
+                    myRef = database.getReference("Polls/December/"+ pollContender.id+"/"+FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    myRef.setValue("Time of vote:" +Calendar.getInstance().getTime());
                 }
+
             });
+
         }
     }
 
