@@ -242,7 +242,7 @@ public class ActivityFacebookLogin extends AppCompatActivity {
 
         if (enableButtons && profile != null) {
             profilePictureView.setProfileId(profile.getId());
-            greeting.setText(getString(R.string.hello_user, profile.getFirstName() + profile.getLastName()));
+            greeting.setText(getString(R.string.hello_user, profile.getFirstName()));
             login_next.setVisibility(View.VISIBLE);
         } else {
             login_next.setVisibility(View.INVISIBLE);

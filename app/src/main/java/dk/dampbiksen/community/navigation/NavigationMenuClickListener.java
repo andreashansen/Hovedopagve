@@ -23,14 +23,15 @@ public class NavigationMenuClickListener implements View.OnClickListener {
                 ((ActivityMain)v.getContext()).transitionTo(((ActivityMain)v.getContext()).fragmentNews, false);
                 break;
             case R.id.button_polls:
-                ((ActivityMain)v.getContext()).transitionTo(((ActivityMain)v.getContext()).fragmentPoll, false);
+                ((ActivityMain)v.getContext()).transitionTo(((ActivityMain)v.getContext()).fragmentPolls, false);
                 break;
             case R.id.button_discounts:
-                ((ActivityMain)v.getContext()).transitionTo(((ActivityMain)v.getContext()).fragmentDiscount, false);
+                ((ActivityMain)v.getContext()).transitionTo(((ActivityMain)v.getContext()).fragmentDiscounts, false);
                 break;
             case R.id.button_my_account:
                 Toast.makeText(v.getContext(), "Onclick on MY ACCOUNT caught.",
                         Toast.LENGTH_LONG).show();
+
                 break;
         }
 

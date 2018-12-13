@@ -29,15 +29,15 @@ public class PollEntry {
     public final String title;
     public final Uri dynamicUrl;
     public final String url;
-    public final String price;
+    public final String id;
     public final String description;
 
     public PollEntry(
-            String title, String dynamicUrl, String url, String price, String description) {
+            String title, String dynamicUrl, String url, String id, String description) {
         this.title = title;
         this.dynamicUrl = Uri.parse(dynamicUrl);
         this.url = url;
-        this.price = price;
+        this.id = id;
         this.description = description;
     }
 

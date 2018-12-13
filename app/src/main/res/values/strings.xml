@@ -6,9 +6,9 @@
     <string name="filter_title">Filter</string>
     <string name="search_title">Search</string>
 
-    <string name="title_app_bar_news">Dampbiksen.dk  Nyheder</string>
-    <string name="title_app_bar_polls">Dampbiksen.dk  Afstemning</string>
-    <string name="title_app_bar_products">Dampbiksen.dk  Aktuelle Kampagner</string>
+    <string name="title_app_bar_news">Aktuelle Nyheder</string>
+    <string name="title_app_bar_polls">Ugens Afstemning</string>
+    <string name="title_app_bar_products">Loyalitetsfordele</string>
 
     <!--UI- Alert Items -->
     <string name="error_password">Password must contain at least 8 characters.</string>
@@ -32,9 +32,9 @@
     <string name="product_description">Secondary text</string>
 
     <!--Menu Items -->
-    <string name="backdrop_home">Nyheder</string>
+    <string name="backdrop_home">Aktuelle Nyheder</string>
     <string name="backdrop_poll">Ugens Afstemning</string>
-    <string name="backdrop_offer">Aktuelle Kampagner</string>
+    <string name="backdrop_offer">Loyalitetsfordele</string>
     <string name="backdrop_my_account">Min Konto</string>
     <string name="scroll_title">Deals</string>
 

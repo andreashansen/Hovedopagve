@@ -15,8 +15,8 @@ import dk.dampbiksen.community.navigation.NavigationHost;
 public class ActivityMain extends AppCompatActivity implements NavigationHost {
 
     public Fragment fragmentNews;
-    public Fragment fragmentPoll;
-    public Fragment fragmentDiscount;
+    public Fragment fragmentPolls;
+    public Fragment fragmentDiscounts;
 
     private static final long FADE_DEFAULT_TIME = 500;
 
@@ -26,13 +26,13 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
         setContentView(R.layout.layout_activity_main);
 
         fragmentNews = new FragmentNews();
-        fragmentPoll = new FragmentPolls();
-        fragmentDiscount = new FragmentDiscounts();
+        fragmentPolls = new FragmentPolls();
+        fragmentDiscounts = new FragmentDiscounts();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, fragmentDiscount)
+                    .add(R.id.container, fragmentNews)
                     .commit();
         }
     }

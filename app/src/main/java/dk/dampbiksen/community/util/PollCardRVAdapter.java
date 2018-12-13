@@ -5,10 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.List;
 
+import dk.dampbiksen.community.ActivityMain;
+import dk.dampbiksen.community.FragmentPolls;
 import dk.dampbiksen.community.R;
+import dk.dampbiksen.community.login.ActivityFacebookLogin;
 import dk.dampbiksen.community.network.ImageRequester;
 import dk.dampbiksen.community.network.PollEntry;
 
@@ -33,12 +37,19 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PollCardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final PollCardViewHolder holder, int position) {
         if (productList != null && position < productList.size()) {
-            PollEntry pollContender = productList.get(position);
+            final PollEntry pollContender = productList.get(position);
             holder.productTitle.setText(pollContender.title);
             holder.productDesc.setText(pollContender.description);
             imageRequester.setImageFromUrl(holder.productImage, pollContender.url);
+            holder.voteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "Tak fordi du stemte på " + pollContender.id,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
