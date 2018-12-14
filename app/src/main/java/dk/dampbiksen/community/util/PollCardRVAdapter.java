@@ -60,6 +60,7 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                     // Write a message to the database
                     myRef = database.getReference("Polls/"+pollContender.pollid+"/Contenders/"+ pollContender.id+"/"+FirebaseAuth.getInstance().getCurrentUser().getUid());
                     myRef.setValue("ToV:" +Calendar.getInstance().getTime());
+
                     myRef = database.getReference("Polls/"+pollContender.pollid+"/Votes/"+ vote.voteID);
                     myRef.setValue(vote);
 
