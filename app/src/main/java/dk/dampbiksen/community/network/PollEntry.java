@@ -31,14 +31,16 @@ public class PollEntry {
     public final String url;
     public final String id;
     public final String description;
+    public final String pollid;
 
     public PollEntry(
-            String title, String dynamicUrl, String url, String id, String description) {
+            String title, String dynamicUrl, String url, String id, String description, String pollid) {
         this.title = title;
         this.dynamicUrl = Uri.parse(dynamicUrl);
         this.url = url;
         this.id = id;
         this.description = description;
+        this.pollid = pollid;
     }
 
     /**
