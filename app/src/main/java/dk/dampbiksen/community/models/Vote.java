@@ -1,4 +1,4 @@
-package dk.dampbiksen.community.util;
+package dk.dampbiksen.community.models;
 
 import com.google.firebase.auth.FirebaseUser;
 
@@ -15,6 +15,10 @@ public class Vote {
     public String voteRecipient;
 
 
+    public Vote ()
+    {
+
+    }
     public Vote(PollEntry contender, FirebaseUser user)
     {
         this.voteDate = Calendar.getInstance().getTime().toString();
