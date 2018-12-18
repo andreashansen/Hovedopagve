@@ -4,8 +4,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Calendar;
 
-import dk.dampbiksen.community.network.PollEntry;
-
 public class Vote {
 
     public String voteID;

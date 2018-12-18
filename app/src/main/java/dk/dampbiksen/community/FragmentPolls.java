@@ -16,7 +16,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 import dk.dampbiksen.community.navigation.NavigationIconClickListener;
 import dk.dampbiksen.community.navigation.NavigationMenuClickListener;
-import dk.dampbiksen.community.network.PollEntry;
+import dk.dampbiksen.community.models.PollEntry;
 import dk.dampbiksen.community.util.DefaultItemDecoration;
 import dk.dampbiksen.community.util.PollCardRVAdapter;
 

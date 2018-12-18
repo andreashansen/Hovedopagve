@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import dk.dampbiksen.community.R;
 import dk.dampbiksen.community.network.ImageRequester;
-import dk.dampbiksen.community.network.ProductEntry;
+import dk.dampbiksen.community.models.ProductEntry;
 
 import java.util.List;
 

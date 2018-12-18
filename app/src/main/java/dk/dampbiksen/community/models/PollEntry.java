@@ -1,4 +1,4 @@
-package dk.dampbiksen.community.network;
+package dk.dampbiksen.community.models;
 
 import android.content.res.Resources;
 import android.net.Uri;
@@ -47,7 +47,7 @@ public class PollEntry {
      * Loads a raw JSON at R.raw.pollcontender and converts it into a list of PollEntry objects
      */
     public static List<PollEntry> initPollEntryList(Resources resources) {
-        InputStream inputStream = resources.openRawResource(R.raw.pollcontender);
+                InputStream inputStream = resources.openRawResource(R.raw.pollcontender);
         Writer writer = new StringWriter();
         char[] buffer = new char[1024];
         try {

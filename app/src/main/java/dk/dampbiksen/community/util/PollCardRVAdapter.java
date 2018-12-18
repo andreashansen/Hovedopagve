@@ -1,6 +1,5 @@
 package dk.dampbiksen.community.util;
 
-import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -22,7 +21,7 @@ import java.util.Calendar;
 import dk.dampbiksen.community.R;
 import dk.dampbiksen.community.models.Vote;
 import dk.dampbiksen.community.network.ImageRequester;
-import dk.dampbiksen.community.network.PollEntry;
+import dk.dampbiksen.community.models.PollEntry;
 
 /**
  * Adapter used to show a simple grid of products.

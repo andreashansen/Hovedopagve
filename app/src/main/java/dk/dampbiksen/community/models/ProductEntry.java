@@ -1,4 +1,4 @@
-package dk.dampbiksen.community.network;
+package dk.dampbiksen.community.models;
 
 import android.content.res.Resources;
 import android.net.Uri;
