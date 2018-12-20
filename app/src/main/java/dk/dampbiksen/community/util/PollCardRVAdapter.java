@@ -1,18 +1,15 @@
 package dk.dampbiksen.community.util;
 
-import android.graphics.Color;
+
 import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.design.button.MaterialButton;
 import android.support.v7.widget.RecyclerView;
-import android.transition.Visibility;
 import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
-import java.util.Calendar;
 
 import dk.dampbiksen.community.R;
 import dk.dampbiksen.community.models.Vote;
@@ -79,11 +75,7 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                         mb.setText(R.string.button_voted);
                         }
                         holder.voteButton.setClickable(false);
-
                     }
-
-
-
                 }
 
                 @Override
@@ -113,12 +105,8 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                     MaterialButton mb  = holder.voteButton;
                     mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
                     mb.setText(R.string.button_voted);
-
-
                 }
-
             });
-
         }
     }
 
