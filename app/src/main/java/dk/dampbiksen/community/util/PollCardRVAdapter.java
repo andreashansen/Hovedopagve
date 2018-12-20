@@ -1,6 +1,7 @@
 package dk.dampbiksen.community.util;
 
 
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.design.button.MaterialButton;
@@ -72,6 +73,7 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                         {
                         MaterialButton mb  = holder.voteButton;
                         mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
+                        mb.setBackgroundColor(Color.GRAY);
                         mb.setText(R.string.button_voted);
                         }
                         holder.voteButton.setClickable(false);

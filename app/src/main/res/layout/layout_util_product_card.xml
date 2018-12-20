@@ -31,7 +31,7 @@
             <TextView
                 android:id="@+id/product_title"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="36dp"
                 android:text="@string/product_title"
                 android:textAlignment="center"
                 android:textAppearance="?attr/textAppearanceSubtitle2" />
