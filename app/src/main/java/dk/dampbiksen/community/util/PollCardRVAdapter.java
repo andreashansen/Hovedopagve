@@ -65,15 +65,24 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     // Get Post object and use the values to update the UI
                     Vote dbvote = dataSnapshot.getValue(Vote.class);
+
                     if (dbvote == null)
                     {
                         holder.voteButton.setClickable(true);
                     }
                     else
                     {
+                        if(dbvote.voteRecipient.equalsIgnoreCase(pollContender.id))
+                        {
+                        MaterialButton mb  = holder.voteButton;
+                        mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
+                        mb.setText(R.string.button_voted);
+                        }
                         holder.voteButton.setClickable(false);
 
                     }
+
+
 
                 }
 
@@ -99,7 +108,7 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                     myRef = database.getReference("Polls/"+pollContender.pollid+"/Votes/"+ vote.voteID);
                     myRef.setValue(vote);
                     myRef = database.getReference("Polls/"+pollContender.pollid+"/Contenders/"+ pollContender.id+"/"+FirebaseAuth.getInstance().getCurrentUser().getUid());
-                    myRef.setValue("ToV:" +Calendar.getInstance().getTime());
+                    myRef.setValue(vote);
 
                     MaterialButton mb  = holder.voteButton;
                     mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
