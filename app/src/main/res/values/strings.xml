@@ -24,8 +24,10 @@
     <!--UI- Button Items -->
     <string name="sign_out">Sign Out</string>
     <string name="button_vote">Stem</string>
+    <string name="button_voted">Tak for din stemme</string>
     <string name="button_next">Next</string>
     <string name="button_cancel">Cancel</string>
+    <string name="button_product_discount">Rabatkode</string>
 
     <!--Card Items -->
     <string name="product_title">Title</string>

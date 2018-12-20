@@ -1,8 +1,13 @@
 package dk.dampbiksen.community.util;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
+import android.support.design.button.MaterialButton;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Visibility;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +72,7 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                     else
                     {
                         holder.voteButton.setClickable(false);
+
                     }
 
                 }
@@ -94,6 +100,11 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                     myRef.setValue(vote);
                     myRef = database.getReference("Polls/"+pollContender.pollid+"/Contenders/"+ pollContender.id+"/"+FirebaseAuth.getInstance().getCurrentUser().getUid());
                     myRef.setValue("ToV:" +Calendar.getInstance().getTime());
+
+                    MaterialButton mb  = holder.voteButton;
+                    mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
+                    mb.setText(R.string.button_voted);
+
 
                 }
 

@@ -28,15 +28,15 @@ public class ProductEntry {
     public final String title;
     public final Uri dynamicUrl;
     public final String url;
-    public final String price;
+    public final String discountcode;
     public final String description;
 
     public ProductEntry(
-            String title, String dynamicUrl, String url, String price, String description) {
+            String title, String dynamicUrl, String url, String discountcode, String description) {
         this.title = title;
         this.dynamicUrl = Uri.parse(dynamicUrl);
         this.url = url;
-        this.price = price;
+        this.discountcode = discountcode;
         this.description = description;
     }
 

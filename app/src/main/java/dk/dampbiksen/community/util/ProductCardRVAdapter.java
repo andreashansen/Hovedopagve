@@ -2,6 +2,7 @@ package dk.dampbiksen.community.util;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,7 @@ public class ProductCardRVAdapter extends RecyclerView.Adapter<ProductCardViewHo
         if (productList != null && position < productList.size()) {
             ProductEntry product = productList.get(position);
             holder.productTitle.setText(product.title);
-            holder.productPrice.setText(product.price);
+            holder.productDiscountCode = product.discountcode;
             imageRequester.setImageFromUrl(holder.productImage, product.url);
         }
     }
