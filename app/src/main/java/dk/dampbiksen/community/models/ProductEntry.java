@@ -3,8 +3,15 @@ package dk.dampbiksen.community.models;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.util.Log;
+import android.widget.Toast;
 
 import dk.dampbiksen.community.R;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -29,14 +36,16 @@ public class ProductEntry {
     public final Uri dynamicUrl;
     public final String url;
     public final String discountcode;
+    public final String discountid;
     public final String description;
 
     public ProductEntry(
-            String title, String dynamicUrl, String url, String discountcode, String description) {
+            String title, String dynamicUrl, String url, String discountcode, String discountid, String description) {
         this.title = title;
         this.dynamicUrl = Uri.parse(dynamicUrl);
         this.url = url;
         this.discountcode = discountcode;
+        this.discountid = discountid;
         this.description = description;
     }
 
@@ -44,6 +53,7 @@ public class ProductEntry {
      * Loads a raw JSON at R.raw.products and converts it into a list of ProductEntry objects
      */
     public static List<ProductEntry> initProductEntryList(Resources resources) {
+
         InputStream inputStream = resources.openRawResource(R.raw.offers);
         Writer writer = new StringWriter();
         char[] buffer = new char[1024];

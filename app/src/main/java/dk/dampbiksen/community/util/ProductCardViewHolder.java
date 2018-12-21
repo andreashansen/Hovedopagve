@@ -15,6 +15,7 @@ public class ProductCardViewHolder extends RecyclerView.ViewHolder {
     public NetworkImageView productImage;
     public TextView productTitle;
     public String productDiscountCode;
+    public String productDiscountId;
     public MaterialButton productDiscountButton;
 
     public ProductCardViewHolder(@NonNull View itemView) {

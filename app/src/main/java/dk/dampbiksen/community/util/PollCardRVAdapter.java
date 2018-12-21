@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -75,8 +76,9 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                         mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
                         mb.setBackgroundColor(Color.GRAY);
                         mb.setText(R.string.button_voted);
-                        }
                         holder.voteButton.setClickable(false);
+                        }
+
                     }
                 }
 
