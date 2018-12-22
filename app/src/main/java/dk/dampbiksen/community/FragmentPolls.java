@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import dk.dampbiksen.community.navigation.NavigationIconClickListener;
@@ -49,16 +50,16 @@ public class FragmentPolls extends Fragment {
         final RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false));
+        Log.d("FCB","start :"+ Calendar.getInstance().getTime().toString());
         testEntry = PollEntry.readData(new PollEntry.FirebaseCallback() {
                            @Override
                            public void onCallback(List<PollEntry> list) {
-                               Log.d("FCB","Complete");
-                               Log.d("FCB","testentry passed");
                                PollCardRVAdapter adapter = new PollCardRVAdapter(testEntry);
                                recyclerView.setAdapter(adapter);
                                recyclerView.addItemDecoration(new DefaultItemDecoration(
                                        getResources().getDimensionPixelSize(R.dimen.product_grid_spacing),
                                        getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small)));
+                               Log.d("FCB","End :"+ Calendar.getInstance().getTime().toString());
                            }
         });
         view.findViewById(R.id.presenter).setBackground(getContext().getDrawable(R.drawable.fragments_background_shape));
