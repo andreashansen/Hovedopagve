@@ -3,15 +3,9 @@ package dk.dampbiksen.community.models;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.util.Log;
-import android.widget.Toast;
 
 import dk.dampbiksen.community.R;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -47,6 +41,7 @@ public class ProductEntry {
         this.discountcode = discountcode;
         this.discountid = discountid;
         this.description = description;
+
     }
 
     /**
@@ -78,4 +73,6 @@ public class ProductEntry {
         }.getType();
         return gson.fromJson(jsonProductsString, productListType);
     }
+
+
 }
