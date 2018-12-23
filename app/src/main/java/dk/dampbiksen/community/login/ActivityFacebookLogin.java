@@ -77,12 +77,12 @@ public class ActivityFacebookLogin extends AppCompatActivity {
     private FacebookCallback<Sharer.Result> shareCallback = new FacebookCallback<Sharer.Result>() {
         @Override
         public void onCancel() {
-            Log.d("DB facelogin", "Canceled");
+            Log.d("MyCalls", "DB facelogin - Canceled");
         }
 
         @Override
         public void onError(FacebookException error) {
-            Log.d("DB facelogin", String.format("Error: %s", error.toString()));
+            Log.d("MyCalls", String.format("DB facelogin"+" Error: %s", error.toString()));
             String title = getString(R.string.error);
             String alertMessage = error.getMessage();
             showResult(title, alertMessage);
@@ -90,7 +90,7 @@ public class ActivityFacebookLogin extends AppCompatActivity {
 
         @Override
         public void onSuccess(Sharer.Result result) {
-            Log.d("DB facelogin", "Success!");
+            Log.d("MyCalls", "DB facelogin "+"Success!");
             if (result.getPostId() != null) {
                 String title = getString(R.string.success);
                 String id = result.getPostId();

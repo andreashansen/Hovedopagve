@@ -40,7 +40,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
             @Override
             public void onCallbackPoll(List<PollEntry> list) {
                 fragmentPolls.pollEntries = list;
-                Log.d("FCB","PollEntries Done :"+ Calendar.getInstance().getTime().toString());
+                Log.d("MyCalls","PollEntries Done :"+ Calendar.getInstance().getTime().toString());
             }
 
             @Override
@@ -58,7 +58,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
             @Override
             public void onCallbackDiscount(List<DiscountEntry> list) {
                 fragmentDiscounts.discountEntryListEntries = list;
-                Log.d("FCB","PollEntries Done :"+ Calendar.getInstance().getTime().toString());
+                Log.d("MyCalls","DiscountEntries Done :"+ Calendar.getInstance().getTime().toString());
             }
         });
 

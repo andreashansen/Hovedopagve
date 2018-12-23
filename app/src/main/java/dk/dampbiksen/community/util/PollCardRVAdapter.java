@@ -86,7 +86,7 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     // Getting Post failed, log a message
-                    Log.w("db-read", "loadPost:onCancelled", databaseError.toException());
+                    Log.w("MyCalls", "loadPollEntry:onCancelled", databaseError.toException());
 
                 }
             };

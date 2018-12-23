@@ -10,7 +10,7 @@ import com.android.volley.toolbox.NetworkImageView;
 
 import dk.dampbiksen.community.R;
 
-public class ProductCardViewHolder extends RecyclerView.ViewHolder {
+public class DiscountCardViewHolder extends RecyclerView.ViewHolder {
 
     public NetworkImageView productImage;
     public TextView productTitle;
@@ -18,7 +18,7 @@ public class ProductCardViewHolder extends RecyclerView.ViewHolder {
     public String productDiscountId;
     public MaterialButton productDiscountButton;
 
-    public ProductCardViewHolder(@NonNull View itemView) {
+    public DiscountCardViewHolder(@NonNull View itemView) {
         super(itemView);
         productImage = itemView.findViewById(R.id.product_image);
         productTitle = itemView.findViewById(R.id.product_title);

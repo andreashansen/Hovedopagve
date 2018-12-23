@@ -26,14 +26,14 @@ import java.util.List;
 /**
  * Adapter used to show a simple grid of products.
  */
-public class ProductCardRVAdapter extends RecyclerView.Adapter<ProductCardViewHolder> {
+public class DiscountCardRVAdapter extends RecyclerView.Adapter<DiscountCardViewHolder> {
 
     private List<DiscountEntry> productList;
     private ImageRequester imageRequester;
     private DatabaseReference myRef;
     private FirebaseDatabase database;
 
-    public ProductCardRVAdapter(List<DiscountEntry> productList) {
+    public DiscountCardRVAdapter(List<DiscountEntry> productList) {
         this.productList = productList;
         imageRequester = ImageRequester.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -41,13 +41,13 @@ public class ProductCardRVAdapter extends RecyclerView.Adapter<ProductCardViewHo
 
     @NonNull
     @Override
-    public ProductCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DiscountCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_util_product_card, parent, false);
-        return new ProductCardViewHolder(layoutView);
+        return new DiscountCardViewHolder(layoutView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ProductCardViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final DiscountCardViewHolder holder, int position) {
         if (productList != null && position < productList.size()) {
             final DiscountEntry product = productList.get(position);
             holder.productTitle.setText(product.title);
@@ -79,7 +79,7 @@ public class ProductCardRVAdapter extends RecyclerView.Adapter<ProductCardViewHo
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     // Getting Post failed, log a message
-                    Log.w("db-read", "loadPost:onCancelled", databaseError.toException());
+                    Log.w("MyCalls", "loadDiscount:onCancelled", databaseError.toException());
 
                 }
             };
