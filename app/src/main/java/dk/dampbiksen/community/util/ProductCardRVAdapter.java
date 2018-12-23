@@ -18,8 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import dk.dampbiksen.community.R;
+import dk.dampbiksen.community.models.DiscountEntry;
 import dk.dampbiksen.community.network.ImageRequester;
-import dk.dampbiksen.community.models.ProductEntry;
 
 import java.util.List;
 
@@ -28,12 +28,12 @@ import java.util.List;
  */
 public class ProductCardRVAdapter extends RecyclerView.Adapter<ProductCardViewHolder> {
 
-    private List<ProductEntry> productList;
+    private List<DiscountEntry> productList;
     private ImageRequester imageRequester;
     private DatabaseReference myRef;
     private FirebaseDatabase database;
 
-    public ProductCardRVAdapter(List<ProductEntry> productList) {
+    public ProductCardRVAdapter(List<DiscountEntry> productList) {
         this.productList = productList;
         imageRequester = ImageRequester.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -49,7 +49,7 @@ public class ProductCardRVAdapter extends RecyclerView.Adapter<ProductCardViewHo
     @Override
     public void onBindViewHolder(@NonNull final ProductCardViewHolder holder, int position) {
         if (productList != null && position < productList.size()) {
-            final ProductEntry product = productList.get(position);
+            final DiscountEntry product = productList.get(position);
             holder.productTitle.setText(product.title);
             holder.productDiscountCode = product.discountcode;
             holder.productDiscountId = product.discountid;

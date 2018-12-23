@@ -4,6 +4,9 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.util.Log;
 
+import dk.dampbiksen.community.R;
+import dk.dampbiksen.community.util.FirebaseCallback;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,68 +27,66 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import dk.dampbiksen.community.R;
-import dk.dampbiksen.community.util.FirebaseCallback;
-
 /**
- * A poll entry in the list of products.
+ * A discount entry in the list of products.
  */
-public class PollEntry {
-    private static final String TAG = PollEntry.class.getSimpleName();
+public class DiscountEntry {
+    private static final String TAG = DiscountEntry.class.getSimpleName();
 
     public final String title;
     public final Uri dynamicUrl;
     public final String url;
-    public final String id;
+    public final String discountcode;
+    public final String discountid;
     public final String description;
-    public final String pollid;
 
-
-    public PollEntry(
-            String title, String dynamicUrl, String url, String id, String description, String pollid) {
+    public DiscountEntry(
+            String title, String dynamicUrl, String url, String discountcode, String discountid, String description) {
         this.title = title;
         this.dynamicUrl = Uri.parse(dynamicUrl);
         this.url = url;
-        this.id = id;
+        this.discountcode = discountcode;
+        this.discountid = discountid;
         this.description = description;
-        this.pollid = pollid;
+
     }
 
-    public static List<PollEntry> initPollList(final FirebaseCallback firebaseCallback) {
+    public static List<DiscountEntry> initDiscountList(final FirebaseCallback firebaseCallback) {
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Source");
-        DatabaseReference pollsListRef = rootRef.child("Polls");
-        Query query = pollsListRef.orderByChild("id");
-        final ArrayList<PollEntry> pollster = new ArrayList<>();
+        DatabaseReference discountsListRef = rootRef.child("Discounts");
+        Query query = discountsListRef.orderByChild("title");
+        final ArrayList<DiscountEntry> discountEntries = new ArrayList<>();
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren())
                 {
-                    pollster.add(new PollEntry(
+                    discountEntries.add(new DiscountEntry(
                             ds.child("title").getValue(String.class),
                             "",
                             ds.child("url").getValue(String.class),
-                            ds.child("id").getValue(String.class),
-                            ds.child("description").getValue(String.class),
-                            ds.child("pollid").getValue(String.class)));
+                            ds.child("discountcode").getValue(String.class),
+                            ds.child("discountid").getValue(String.class),
+                            ds.child("description").getValue(String.class)));
                 }
-                firebaseCallback.onCallbackPoll(pollster);
+                firebaseCallback.onCallbackDiscount(discountEntries);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         };
         query.addListenerForSingleValueEvent(eventListener);
-        return pollster;
+        return discountEntries;
     }
+
     /**
-     * Loads a raw JSON at R.raw.pollcontender and converts it into a list of PollEntry objects
+     * Loads a raw JSON at R.raw.products and converts it into a list of DiscountEntry objects
      * Used before Firebase intergration
      */
-    public static List<PollEntry> initPollEntryList(Resources resources) {
+    public static List<DiscountEntry> initProductEntryList(Resources resources) {
 
-        InputStream inputStream = resources.openRawResource(R.raw.pollcontender);
+        InputStream inputStream = resources.openRawResource(R.raw.offers);
         Writer writer = new StringWriter();
         char[] buffer = new char[1024];
         try {
@@ -105,7 +106,7 @@ public class PollEntry {
         }
         String jsonProductsString = writer.toString();
         Gson gson = new Gson();
-        Type productListType = new TypeToken<ArrayList<PollEntry>>() {
+        Type productListType = new TypeToken<ArrayList<DiscountEntry>>() {
         }.getType();
         return gson.fromJson(jsonProductsString, productListType);
     }

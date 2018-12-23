@@ -14,14 +14,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import dk.dampbiksen.community.navigation.NavigationIconClickListener;
 import dk.dampbiksen.community.navigation.NavigationMenuClickListener;
-import dk.dampbiksen.community.models.ProductEntry;
+import dk.dampbiksen.community.models.DiscountEntry;
 import dk.dampbiksen.community.util.DefaultItemDecoration;
 import dk.dampbiksen.community.util.ProductCardRVAdapter;
 
 
 public class FragmentDiscounts extends Fragment {
+
+    public List<DiscountEntry> discountEntryListEntries = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,8 +48,7 @@ public class FragmentDiscounts extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
-        ProductCardRVAdapter adapter = new ProductCardRVAdapter(
-                ProductEntry.initProductEntryList(getResources()));
+        ProductCardRVAdapter adapter = new ProductCardRVAdapter(discountEntryListEntries);
         recyclerView.setAdapter(adapter);
         int largePadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small);

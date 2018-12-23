@@ -13,8 +13,10 @@ import android.view.Gravity;
 import java.util.Calendar;
 import java.util.List;
 
+import dk.dampbiksen.community.models.DiscountEntry;
 import dk.dampbiksen.community.models.PollEntry;
 import dk.dampbiksen.community.navigation.NavigationHost;
+import dk.dampbiksen.community.util.FirebaseCallback;
 
 
 public class ActivityMain extends AppCompatActivity implements NavigationHost {
@@ -34,11 +36,29 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
         fragmentPolls = new FragmentPolls();
         fragmentDiscounts = new FragmentDiscounts();
 
-        fragmentPolls.pollEntries = PollEntry.readData(new PollEntry.FirebaseCallback() {
+        fragmentPolls.pollEntries = PollEntry.initPollList(new FirebaseCallback() {
             @Override
-            public void onCallback(List<PollEntry> list) {
+            public void onCallbackPoll(List<PollEntry> list) {
                 fragmentPolls.pollEntries = list;
-                Log.d("FCB","Done :"+ Calendar.getInstance().getTime().toString() +"called from mainactivity");
+                Log.d("FCB","PollEntries Done :"+ Calendar.getInstance().getTime().toString());
+            }
+
+            @Override
+            public void onCallbackDiscount(List<DiscountEntry> list) {
+
+            }
+        });
+
+        fragmentDiscounts.discountEntryListEntries = DiscountEntry.initDiscountList(new FirebaseCallback() {
+            @Override
+            public void onCallbackPoll(List<PollEntry> list) {
+
+            }
+
+            @Override
+            public void onCallbackDiscount(List<DiscountEntry> list) {
+                fragmentDiscounts.discountEntryListEntries = list;
+                Log.d("FCB","PollEntries Done :"+ Calendar.getInstance().getTime().toString());
             }
         });
 

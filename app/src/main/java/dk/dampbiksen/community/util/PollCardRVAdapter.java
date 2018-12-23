@@ -67,18 +67,20 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                     if (dbvote == null)
                     {
                         holder.voteButton.setClickable(true);
+                        Log.d("CLICK","Null-Call");
+
                     }
-                    else
+                    else if(dbvote.voteRecipient.equalsIgnoreCase(pollContender.id))
                     {
-                        if(dbvote.voteRecipient.equalsIgnoreCase(pollContender.id))
-                        {
                         MaterialButton mb  = holder.voteButton;
                         mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
                         mb.setBackgroundColor(Color.GRAY);
                         mb.setText(R.string.button_voted);
                         holder.voteButton.setClickable(false);
-                        }
-
+                    }
+                    else
+                    {
+                        holder.voteButton.setClickable(false);
                     }
                 }
 
