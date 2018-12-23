@@ -60,6 +60,7 @@ public class PollEntry {
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                pollEntriesList.clear();
                 for(DataSnapshot ds : dataSnapshot.getChildren())
                 {
                     pollEntriesList.add(new PollEntry(
@@ -73,10 +74,11 @@ public class PollEntry {
                 firebaseCallback.onCallbackPoll(pollEntriesList);
             }
 
+
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         };
-        query.addListenerForSingleValueEvent(eventListener);
+        query.addValueEventListener(eventListener);
         return pollEntriesList;
     }
     /**

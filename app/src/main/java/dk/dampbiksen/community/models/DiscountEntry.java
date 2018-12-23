@@ -60,6 +60,7 @@ public class DiscountEntry {
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                discountEntries.clear();
                 for(DataSnapshot ds : dataSnapshot.getChildren())
                 {
                     discountEntries.add(new DiscountEntry(
@@ -76,7 +77,7 @@ public class DiscountEntry {
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         };
-        query.addListenerForSingleValueEvent(eventListener);
+        query.addValueEventListener(eventListener);
         return discountEntries;
     }
 
