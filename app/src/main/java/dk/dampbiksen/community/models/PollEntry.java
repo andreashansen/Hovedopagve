@@ -85,40 +85,6 @@ public class PollEntry {
         return gson.fromJson(jsonProductsString, productListType);
     }
 
-    public static List<PollEntry> initPollEntryOnlineList() {
-
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Source");
-        DatabaseReference studentsListRef = rootRef.child("Polls");
-        Query query = studentsListRef.orderByChild("id");
-
-        final List<PollEntry>xPollster = new ArrayList<>();
-
-        ValueEventListener eventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                    String key1 = ds.child("id").getValue(String.class);
-                    String key2 = ds.child("pollid").getValue(String.class);
-                    String key3 = ds.child("url").getValue(String.class);
-                    String key4 = ds.child("description").getValue(String.class);
-                    String key5 = ds.child("title").getValue(String.class);
-                    Log.d("pollster", key1 + " / " + key2 + " / " + key3 + " / " + key4 + " / " + key5);
-
-
-                    xPollster.add(new PollEntry(key5, "", key3, key1 , key4, key2));
-                    Log.d("pollster", "entry added");
-
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {}
-        };
-        query.addListenerForSingleValueEvent(eventListener);
-
-        return xPollster;
-    }
-
     public static List<PollEntry> readData(final FirebaseCallback firebaseCallback) {
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Source");
         DatabaseReference studentsListRef = rootRef.child("Polls");
@@ -128,15 +94,15 @@ public class PollEntry {
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                    String key1 = ds.child("id").getValue(String.class);
-                    String key2 = ds.child("pollid").getValue(String.class);
-                    String key3 = ds.child("url").getValue(String.class);
-                    String key4 = ds.child("description").getValue(String.class);
-                    String key5 = ds.child("title").getValue(String.class);
-                    Log.d("FCB", key1 + " / " + key2 + " / " + key3 + " / " + key4 + " / " + key5);
-
-                    pollster.add(new PollEntry(key5, "", key3, key1 , key4, key2));
+                for(DataSnapshot ds : dataSnapshot.getChildren())
+                {
+                    pollster.add(new PollEntry(
+                            ds.child("title").getValue(String.class),
+                            "",
+                            ds.child("url").getValue(String.class),
+                            ds.child("id").getValue(String.class),
+                            ds.child("description").getValue(String.class),
+                            ds.child("pollid").getValue(String.class)));
                 }
                 firebaseCallback.onCallback(pollster);
             }

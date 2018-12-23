@@ -7,16 +7,21 @@ import android.os.Bundle;
 import android.transition.Fade;
 import android.transition.Slide;
 import android.transition.Visibility;
+import android.util.Log;
 import android.view.Gravity;
 
+import java.util.Calendar;
+import java.util.List;
+
+import dk.dampbiksen.community.models.PollEntry;
 import dk.dampbiksen.community.navigation.NavigationHost;
 
 
 public class ActivityMain extends AppCompatActivity implements NavigationHost {
 
-    public Fragment fragmentNews;
-    public Fragment fragmentPolls;
-    public Fragment fragmentDiscounts;
+    public FragmentNews fragmentNews;
+    public FragmentPolls fragmentPolls;
+    public FragmentDiscounts fragmentDiscounts;
 
     private static final long FADE_DEFAULT_TIME = 500;
 
@@ -28,6 +33,14 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
         fragmentNews = new FragmentNews();
         fragmentPolls = new FragmentPolls();
         fragmentDiscounts = new FragmentDiscounts();
+
+        fragmentPolls.pollEntries = PollEntry.readData(new PollEntry.FirebaseCallback() {
+            @Override
+            public void onCallback(List<PollEntry> list) {
+                fragmentPolls.pollEntries = list;
+                Log.d("FCB","Done :"+ Calendar.getInstance().getTime().toString() +"called from mainactivity");
+            }
+        });
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()

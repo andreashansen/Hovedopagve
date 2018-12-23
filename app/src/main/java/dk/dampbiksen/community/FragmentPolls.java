@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,7 +15,6 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import dk.dampbiksen.community.navigation.NavigationIconClickListener;
@@ -28,7 +26,7 @@ import dk.dampbiksen.community.util.PollCardRVAdapter;
 
 public class FragmentPolls extends Fragment {
 
-    public List<PollEntry>testEntry = new ArrayList<PollEntry>();
+    public List<PollEntry> pollEntries = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,18 +48,12 @@ public class FragmentPolls extends Fragment {
         final RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false));
-        Log.d("FCB","start :"+ Calendar.getInstance().getTime().toString());
-        testEntry = PollEntry.readData(new PollEntry.FirebaseCallback() {
-                           @Override
-                           public void onCallback(List<PollEntry> list) {
-                               PollCardRVAdapter adapter = new PollCardRVAdapter(testEntry);
-                               recyclerView.setAdapter(adapter);
-                               recyclerView.addItemDecoration(new DefaultItemDecoration(
-                                       getResources().getDimensionPixelSize(R.dimen.product_grid_spacing),
-                                       getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small)));
-                               Log.d("FCB","End :"+ Calendar.getInstance().getTime().toString());
-                           }
-        });
+        PollCardRVAdapter adapter = new PollCardRVAdapter(pollEntries);
+        recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new DefaultItemDecoration(
+                getResources().getDimensionPixelSize(R.dimen.product_grid_spacing),
+                getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small)));
+
         view.findViewById(R.id.presenter).setBackground(getContext().getDrawable(R.drawable.fragments_background_shape));
         return view;
     }
