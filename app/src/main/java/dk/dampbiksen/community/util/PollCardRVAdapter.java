@@ -67,7 +67,6 @@ public class PollCardRVAdapter extends RecyclerView.Adapter<PollCardViewHolder> 
                     if (dbvote == null)
                     {
                         holder.voteButton.setClickable(true);
-                        Log.d("CLICK","Null-Call");
 
                     }
                     else if(dbvote.voteRecipient.equalsIgnoreCase(pollContender.id))

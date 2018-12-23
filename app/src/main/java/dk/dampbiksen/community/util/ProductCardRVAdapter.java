@@ -65,16 +65,13 @@ public class ProductCardRVAdapter extends RecyclerView.Adapter<ProductCardViewHo
                     {
                         holder.productDiscountButton.setClickable(true);
                     }
-                    else
+                    else if(discounted.equalsIgnoreCase(product.discountcode))
                     {
-                        if(discounted.equalsIgnoreCase(product.discountcode))
-                        {
-                            MaterialButton mb = holder.productDiscountButton;
-                            mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
-                            mb.setText("Brugt");
-                            holder.productDiscountButton.setClickable(false);
+                        MaterialButton mb = holder.productDiscountButton;
+                        mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
+                        mb.setText("Brugt");
+                        holder.productDiscountButton.setClickable(false);
 
-                        }
                     }
 
                 }
