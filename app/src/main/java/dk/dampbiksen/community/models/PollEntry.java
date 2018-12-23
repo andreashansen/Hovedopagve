@@ -55,14 +55,14 @@ public class PollEntry {
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Source");
         DatabaseReference pollsListRef = rootRef.child("Polls");
         Query query = pollsListRef.orderByChild("id");
-        final ArrayList<PollEntry> pollster = new ArrayList<>();
+        final ArrayList<PollEntry> pollEntriesList = new ArrayList<>();
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren())
                 {
-                    pollster.add(new PollEntry(
+                    pollEntriesList.add(new PollEntry(
                             ds.child("title").getValue(String.class),
                             "",
                             ds.child("url").getValue(String.class),
@@ -70,14 +70,14 @@ public class PollEntry {
                             ds.child("description").getValue(String.class),
                             ds.child("pollid").getValue(String.class)));
                 }
-                firebaseCallback.onCallbackPoll(pollster);
+                firebaseCallback.onCallbackPoll(pollEntriesList);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         };
         query.addListenerForSingleValueEvent(eventListener);
-        return pollster;
+        return pollEntriesList;
     }
     /**
      * Loads a raw JSON at R.raw.pollcontender and converts it into a list of PollEntry objects
