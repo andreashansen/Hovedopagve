@@ -21,6 +21,12 @@
             android:textAlignment="center"
             style="@style/TextAppearance.Community.Title"
             />
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="?android:attr/colorPrimaryDark"
+            android:layout_margin="20dp"
+        />
 
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/news_image_top"
@@ -54,6 +60,12 @@
             android:textAlignment="center"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             />
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="?android:attr/colorPrimaryDark"
+            android:layout_margin="20dp"
+        />
 
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/news_image_bottom"
