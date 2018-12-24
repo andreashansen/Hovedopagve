@@ -43,9 +43,15 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
 
 import dk.dampbiksen.community.ActivityMain;
 import dk.dampbiksen.community.R;
+import dk.dampbiksen.community.models.DiscountEntry;
+import dk.dampbiksen.community.models.NewsEntry;
+import dk.dampbiksen.community.models.PollEntry;
+import dk.dampbiksen.community.util.FirebaseCallback;
 
 public class ActivityFacebookLogin extends AppCompatActivity {
 
@@ -109,6 +115,7 @@ public class ActivityFacebookLogin extends AppCompatActivity {
         }
     };
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,6 +183,8 @@ public class ActivityFacebookLogin extends AppCompatActivity {
                 handlePendingAction();
             }
         };
+
+
 
         profilePictureView = findViewById(R.id.profilePicture);
         greeting = findViewById(R.id.greeting);

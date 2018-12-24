@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp"
+    app:cardPreventCornerOverlap="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <TextView
+            android:id="@+id/news_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            style="@style/TextAppearance.Community.Title"
+            />
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/news_image_top"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:paddingTop="2dp" />
+
+        <TextView
+            android:id="@+id/news_text_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/product_title"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+        />
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/news_image_mid"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:paddingTop="2dp" />
+
+        <TextView
+            android:id="@+id/news_text_last"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            />
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/news_image_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:paddingTop="2dp" />
+
+    </LinearLayout>
+</android.support.design.card.MaterialCardView>

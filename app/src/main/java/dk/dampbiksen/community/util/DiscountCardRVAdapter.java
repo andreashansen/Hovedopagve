@@ -42,7 +42,7 @@ public class DiscountCardRVAdapter extends RecyclerView.Adapter<DiscountCardView
     @NonNull
     @Override
     public DiscountCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_util_product_card, parent, false);
+        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_util_discount_card, parent, false);
         return new DiscountCardViewHolder(layoutView);
     }
 

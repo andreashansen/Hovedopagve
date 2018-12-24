@@ -14,6 +14,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import dk.dampbiksen.community.models.DiscountEntry;
+import dk.dampbiksen.community.models.NewsEntry;
 import dk.dampbiksen.community.models.PollEntry;
 import dk.dampbiksen.community.navigation.NavigationHost;
 import dk.dampbiksen.community.util.FirebaseCallback;
@@ -47,9 +48,15 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
             public void onCallbackDiscount(List<DiscountEntry> list) {
 
             }
+
+            @Override
+            public void onCallbackNews(List<NewsEntry> list) {
+
+            }
+
         });
 
-        fragmentDiscounts.discountEntryListEntries = DiscountEntry.initDiscountList(new FirebaseCallback() {
+        fragmentDiscounts.discountEntryList = DiscountEntry.initDiscountList(new FirebaseCallback() {
             @Override
             public void onCallbackPoll(List<PollEntry> list) {
 
@@ -57,15 +64,40 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
 
             @Override
             public void onCallbackDiscount(List<DiscountEntry> list) {
-                fragmentDiscounts.discountEntryListEntries = list;
+                fragmentDiscounts.discountEntryList = list;
                 Log.d("MyCalls","DiscountEntries Done :"+ Calendar.getInstance().getTime().toString());
             }
+
+            @Override
+            public void onCallbackNews(List<NewsEntry> list) {
+
+            }
+
+        });
+
+        fragmentNews.newsEntries = NewsEntry.initNewsList(new FirebaseCallback() {
+            @Override
+            public void onCallbackPoll(List<PollEntry> list) {
+
+            }
+
+            @Override
+            public void onCallbackDiscount(List<DiscountEntry> list) {
+
+            }
+
+            @Override
+            public void onCallbackNews(List<NewsEntry> list) {
+            fragmentNews.newsEntries = list;
+                Log.d("MyCalls","NewsEntries Done :"+ Calendar.getInstance().getTime().toString());
+            }
+
         });
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, fragmentNews)
+                    .add(R.id.container, fragmentPolls)
                     .commit();
         }
     }

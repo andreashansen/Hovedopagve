@@ -26,7 +26,7 @@ import dk.dampbiksen.community.util.DiscountCardRVAdapter;
 
 public class FragmentDiscounts extends Fragment {
 
-    public List<DiscountEntry> discountEntryListEntries = new ArrayList<>();
+    public List<DiscountEntry> discountEntryList = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class FragmentDiscounts extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
-        DiscountCardRVAdapter adapter = new DiscountCardRVAdapter(discountEntryListEntries);
+        DiscountCardRVAdapter adapter = new DiscountCardRVAdapter(discountEntryList);
         recyclerView.setAdapter(adapter);
         int largePadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small);

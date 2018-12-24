@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,11 +15,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import dk.dampbiksen.community.models.NewsEntry;
 import dk.dampbiksen.community.navigation.NavigationIconClickListener;
 import dk.dampbiksen.community.navigation.NavigationMenuClickListener;
+import dk.dampbiksen.community.util.DefaultItemDecoration;
+import dk.dampbiksen.community.util.NewsCardRVAdapter;
 
 
 public class FragmentNews extends Fragment {
+
+    public List<NewsEntry> newsEntries = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,9 +45,17 @@ public class FragmentNews extends Fragment {
         setUpToolbar(view);
         setUpMenuNavigation(view);
 
+        // Set up the RecyclerView
+        final RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false));
+        NewsCardRVAdapter adapter = new NewsCardRVAdapter(newsEntries);
+        recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new DefaultItemDecoration(
+                getResources().getDimensionPixelSize(R.dimen.product_grid_spacing),
+                getResources().getDimensionPixelSize(R.dimen.product_grid_spacing_small)));
+
         view.findViewById(R.id.presenter).setBackground(getContext().getDrawable(R.drawable.fragments_background_shape));
-
-
 
         return view;
     }
