@@ -43,6 +43,7 @@ public class FragmentContactinfo extends Fragment {
         view.findViewById(R.id.button_news).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_news)));
         view.findViewById(R.id.button_polls).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_polls)));
         view.findViewById(R.id.button_discounts).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_discounts)));
+        view.findViewById(R.id.button_contact_info).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_contact_info)));
         view.findViewById(R.id.button_my_account).setOnClickListener(new NavigationMenuClickListener(view.findViewById(R.id.button_my_account)));
     }
 
