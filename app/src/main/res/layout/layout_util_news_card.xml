@@ -25,10 +25,11 @@
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/news_image_top"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:scaleType="centerCrop"
-            android:paddingTop="2dp" />
+            android:paddingTop="2dp"
+            />
 
         <TextView
             android:id="@+id/news_text_first"
@@ -41,7 +42,7 @@
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/news_image_mid"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:scaleType="centerCrop"
             android:paddingTop="2dp" />
@@ -57,7 +58,7 @@
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/news_image_bottom"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:scaleType="centerCrop"
             android:paddingTop="2dp" />

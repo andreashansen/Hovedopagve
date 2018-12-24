@@ -69,7 +69,7 @@ public class DiscountCardRVAdapter extends RecyclerView.Adapter<DiscountCardView
                     {
                         MaterialButton mb = holder.productDiscountButton;
                         mb.setBackgroundTintMode(PorterDuff.Mode.ADD);
-                        mb.setText("Brugt");
+                        mb.setText(product.discountcode);
                         holder.productDiscountButton.setClickable(false);
 
                     }
@@ -89,7 +89,7 @@ public class DiscountCardRVAdapter extends RecyclerView.Adapter<DiscountCardView
             holder.productDiscountButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(v.getContext(), holder.productDiscountId + holder.productTitle.getText(),
+                    Toast.makeText(v.getContext(), "Husk at brug din kode!",
                             Toast.LENGTH_LONG).show();
 
                     // Write a message to the database

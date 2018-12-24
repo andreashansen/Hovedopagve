@@ -31,6 +31,8 @@ public class NavigationMenuClickListener implements View.OnClickListener {
             case R.id.button_my_account:
                 Toast.makeText(v.getContext(), "Onclick on MY ACCOUNT caught.",
                         Toast.LENGTH_LONG).show();
+            case R.id.button_contact_info:
+                ((ActivityMain)v.getContext()).transitionTo(((ActivityMain)v.getContext()).fragmentContactinfo, false);
 
                 break;
         }

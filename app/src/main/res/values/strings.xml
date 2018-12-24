@@ -8,7 +8,8 @@
 
     <string name="title_app_bar_news">Aktuelle Nyheder</string>
     <string name="title_app_bar_polls">Ugens Afstemning</string>
-    <string name="title_app_bar_products">Loyalitetsfordele</string>
+    <string name="title_app_bar_discount">Loyalitetsfordele</string>
+    <string name="title_app_bar_contact">Startside / Kontakt</string>
 
     <!--UI- Alert Items -->
     <string name="error_password">Password must contain at least 8 characters.</string>
@@ -34,10 +35,20 @@
     <string name="product_description">Secondary text</string>
 
     <!--Menu Items -->
-    <string name="backdrop_home">Aktuelle Nyheder</string>
+    <string name="backdrop_news">Aktuelle Nyheder</string>
     <string name="backdrop_poll">Ugens Afstemning</string>
-    <string name="backdrop_offer">Loyalitetsfordele</string>
+    <string name="backdrop_discounts">Loyalitetsfordele</string>
     <string name="backdrop_my_account">Min Konto</string>
+    <string name="backdrop_start_contact">Startside / Kontakt</string>
+
+    <!--Company info -->
+    <string name="info_titel">Velkommen til</string>
+    <string name="info_titel_desc">Vores kontaktinformationer</string>
+    <string name="info_companyname">Dampbiksen</string>
+    <string name="info_companyadress">6950 Ringkøbing</string>
+    <string name="info_companycvr">CVR-nummer: 39154935</string>
+    <string name="info_companyphone">Telefon-nr.: 29290743</string>
+    <string name="info_companymail">E-mail : mail@dampbiksen.dk</string>
     
 
     <!--Firebase Items -->

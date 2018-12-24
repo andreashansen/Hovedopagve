@@ -25,6 +25,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
     public FragmentNews fragmentNews;
     public FragmentPolls fragmentPolls;
     public FragmentDiscounts fragmentDiscounts;
+    public FragmentContactinfo fragmentContactinfo;
 
     private static final long FADE_DEFAULT_TIME = 500;
 
@@ -36,6 +37,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
         fragmentNews = new FragmentNews();
         fragmentPolls = new FragmentPolls();
         fragmentDiscounts = new FragmentDiscounts();
+        fragmentContactinfo = new FragmentContactinfo();
 
         fragmentPolls.pollEntries = PollEntry.initPollList(new FirebaseCallback() {
             @Override
@@ -97,7 +99,7 @@ public class ActivityMain extends AppCompatActivity implements NavigationHost {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, fragmentPolls)
+                    .add(R.id.container, fragmentContactinfo)
                     .commit();
         }
     }
