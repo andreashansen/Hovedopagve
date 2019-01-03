@@ -39,6 +39,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthCredential;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 
 import java.util.ArrayList;
@@ -65,12 +67,6 @@ public class ActivityFacebookLogin extends AppCompatActivity {
     }
     private final String PENDING_ACTION_BUNDLE_KEY = "dk.dampbiksen.community.login:PendingAction";
     private static final String PERMISSION = "publish_actions";
-    private static final Location SEATTLE_LOCATION = new Location("") {
-        {
-            setLatitude(47.6097);
-            setLongitude(-122.3331);
-        }
-    };
     private ProfilePictureView profilePictureView;
     private TextView greeting;
     private MaterialButton login_next;
@@ -128,7 +124,7 @@ public class ActivityFacebookLogin extends AppCompatActivity {
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        handlePendingAction();
+                        //handlePendingAction();
                         handleFacebookAccessToken(loginResult.getAccessToken());
                         updateUI();
 
@@ -323,6 +319,9 @@ public class ActivityFacebookLogin extends AppCompatActivity {
         Intent intent = new Intent(this, ActivityMain.class);
         startActivity(intent);
     }
+
+
+
 
 
     //Facebook Functions

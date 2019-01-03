@@ -21,6 +21,9 @@
     <string name="poll_description">I denne måned har vi endnu seks nye produkter i kikkerten, vigtigst af alt er dog
     hvad i som kunder har kig på. Derfor gør vi det nu muligt for jer at deltage i valget, igennem vores nye  app. Stem på det produkt
     i helst ser komme til Dampbiksen.dk - og vær med i lodtrækningen om: 1 stk. af det vindende produkt.</string>
+    <string name="disc_description">Her finder i løbende diverse rabater der kan benyttes via webshoppen. Prop den gældende vare i
+    kurven, indtast den udleverede rabatkode, og spar penge. Dette er vores måde at give lidt tilbage, til vores dejlige kunder
+    rundt i det danske land.</string>
 
     <!--UI- Button Items -->
     <string name="sign_out">Sign Out</string>
